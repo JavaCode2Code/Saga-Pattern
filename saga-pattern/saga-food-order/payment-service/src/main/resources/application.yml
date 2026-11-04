@@ -1,0 +1,17 @@
+server:
+  port: 9003
+  error:
+    include-message: always
+spring:
+  application:
+    name: payment-service
+  jpa:
+    open-in-view: false
+  datasource:
+    url: jdbc:h2:mem:payment;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+

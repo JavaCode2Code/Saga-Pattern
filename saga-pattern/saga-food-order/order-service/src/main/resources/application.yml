@@ -1,0 +1,22 @@
+server:
+  port: 9001
+  error:
+    include-message: always
+spring:
+  application:
+    name: order-service
+  jpa:
+    open-in-view: false
+  datasource:
+    url: jdbc:h2:mem:orders;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+saga:
+  inventory-url: ${INVENTORY_URL:http://localhost:9002}
+  payment-url: ${PAYMENT_URL:http://localhost:9003}
+  delivery-url: ${DELIVERY_URL:http://localhost:9004}
+  compensation-retries: 3
+  stuck-after-seconds: 60
